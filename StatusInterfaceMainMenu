@@ -1,0 +1,23 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class StatusInterface : MonoBehaviour
+{
+    [SerializeField] Text moneyText;
+    private GameController gameController;
+
+    private void Start()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
+
+    public void ShowMoneyCount(int count)
+    {
+        moneyText.text = count.ToString();
+    }
+
+    public void Pause()
+    {
+        gameController.PauseGame();
+    }
+}
